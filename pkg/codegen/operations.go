@@ -704,6 +704,9 @@ func GenerateBodyDefinitions(operationID string, bodyOrRef *openapi3.RequestBody
 			tag = "Formdata"
 		case contentType == "text/plain":
 			tag = "Text"
+		case contentType == "text/csv":
+			tag = "CSV"
+		case contentType == "application/octet-stream":
 		default:
 			bd := RequestBodyDefinition{
 				Required:    body.Required,
